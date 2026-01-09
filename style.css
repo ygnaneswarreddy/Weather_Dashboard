@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --primary: #7c8cff;
+  --secondary: #22c55e;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.header h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+
+.header p {
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+/* ---------- SEARCH ---------- */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.search-box input {
+  width: 320px;
+  padding: 14px 22px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.search-box button {
+  padding: 14px 26px;
+  border-radius: 30px;
+  border: none;
+  background: var(--secondary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.search-box button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ---------- GLASS CARDS ---------- */
+.current-weather,
+.forecast-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  padding: 28px;
+  margin-bottom: 30px;
+}
+
+/* ---------- CURRENT WEATHER ---------- */
+.location {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.current-main {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.weather-icon {
+  font-size: 5.5rem;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  text-transform: capitalize;
+}
+
+/* ---------- DETAILS GRID ---------- */
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.value {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* ---------- HOURLY ---------- */
+.forecast-section h2 {
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+}
+
+.hourly-forecast {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.hourly-item {
+  min-width: 95px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.hourly-item:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- DAILY ---------- */
+.daily-forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+}
+
+.daily-item {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.daily-item:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- STATES ---------- */
+.loading {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 40px;
+}
+
+.error {
+  background: #ef4444;
+  padding: 15px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  .current-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .temperature {
+    font-size: 3.2rem;
+  }
+}
